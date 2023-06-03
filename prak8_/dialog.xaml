@@ -10,9 +10,11 @@
     <Grid Style="{DynamicResource grid}">
         <Grid.ContextMenu>
             <ContextMenu x:Name="cm">
-                <MenuItem Header="Сбросить тему"/>
-                <MenuItem Header="Установить темную тему"/>
-                <MenuItem Header="Установить светлую тему"/>
+                <MenuItem Header="asd" Click="Click_1"/>
+                <MenuItem Header="asd" Click="Click_2"/>
+                <MenuItem Header="asd" Click="Click_3"/>
+                <MenuItem Header="asd" Click="Click_4"/>
+                <MenuItem Header="asd" Click="Click_5"/>
             </ContextMenu>
         </Grid.ContextMenu>
         <Button Content="{StaticResource b5}" Margin="70,92,0,0" Click="Button_Click" HorizontalAlignment="Left" Width="60" Height="20" VerticalAlignment="Top" Style="{DynamicResource button}"/>

@@ -1,4 +1,5 @@
-﻿using function;
+﻿using doing;
+using function;
 using prak8_;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,7 @@ namespace prak8_
         public dialog()
         {
             InitializeComponent();
+            MainWindow.set_them_and_language(use.read("them.txt"), use.read("language.txt"));
             tb.Text = "";
         }
 
@@ -48,6 +50,36 @@ namespace prak8_
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             new MainWindow().Show();
+        }
+
+        private void Click_1(object sender, RoutedEventArgs e)
+        {
+            use.write("them.txt", "default");
+            MainWindow.set_them_and_language(use.read("them.txt"), use.read("language.txt"));
+        }
+
+        private void Click_2(object sender, RoutedEventArgs e)
+        {
+            use.write("them.txt", "dark");
+            MainWindow.set_them_and_language(use.read("them.txt"), use.read("language.txt"));
+        }
+
+        private void Click_3(object sender, RoutedEventArgs e)
+        {
+            use.write("them.txt", "light");
+            MainWindow.set_them_and_language(use.read("them.txt"), use.read("language.txt"));
+        }
+
+        private void Click_4(object sender, RoutedEventArgs e)
+        {
+            use.write("language.txt", "ru");
+            MainWindow.set_them_and_language(use.read("them.txt"), use.read("language.txt"));
+        }
+
+        private void Click_5(object sender, RoutedEventArgs e)
+        {
+            use.write("language.txt", "eng");
+            MainWindow.set_them_and_language(use.read("them.txt"), use.read("language.txt"));
         }
     }
 }
