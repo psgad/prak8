@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using function;
 using doing;
 using System.Threading.Tasks;
+using System.Windows.Markup;
 
 namespace prak8_
 {
@@ -158,8 +159,9 @@ namespace prak8_
             use.write("them.txt", "dark");
             set_them_and_language(use.read("them.txt"), use.read("language.txt"));
         }
-        public static void set_them_and_language(string them, string lang)
+        void set_them_and_language(string them, string lang)
         {
+            Application.Current.Resources.MergedDictionaries.Clear();
             if (them == "" || lang == "")
             {
                 Application.Current.Resources.MergedDictionaries.Insert(0, new ResourceDictionary { Source = new Uri("pack://application:,,,/ru-eng;component/eng.xaml") });
@@ -181,34 +183,19 @@ namespace prak8_
                                 "Set english language"
                             };
             if (lang == "eng")
-            {
                 for (int i = title.Count / 2; i < title.Count; i++)
-                {
                     (cm.Items[i - 5] as MenuItem).Header = title[i];
-                }
-                Application.Current.Resources.MergedDictionaries.Clear();
-                if (them == "dark")
-                    Application.Current.Resources.MergedDictionaries.Insert(0, new ResourceDictionary { Source = new Uri("pack://application:,,,/dark_;component/lou.xaml") });
-                if (them == "light")
-                    Application.Current.Resources.MergedDictionaries.Insert(0, new ResourceDictionary { Source = new Uri("pack://application:,,,/dark_;component/full.xaml") });
-                if (them != "default")
-                    Application.Current.Resources.MergedDictionaries.Insert(1, new ResourceDictionary { Source = new Uri("pack://application:,,,/ru-eng;component/eng.xaml") });
-            }
-            else
-            {
+            if (lang == "ru")
                 for (int i = 0; i < title.Count / 2; i++)
-                {
                     (cm.Items[i] as MenuItem).Header = title[i];
-                }
-                Application.Current.Resources.MergedDictionaries.Clear();
-                if (them == "dark")
-                    Application.Current.Resources.MergedDictionaries.Insert(0, new ResourceDictionary { Source = new Uri("pack://application:,,,/dark_;component/lou.xaml") });
-                if (them == "light")
-                    Application.Current.Resources.MergedDictionaries.Insert(0, new ResourceDictionary { Source = new Uri("pack://application:,,,/dark_;component/full.xaml") });
-                if (them != "default")
-                    Application.Current.Resources.MergedDictionaries.Insert(1, new ResourceDictionary { Source = new Uri("pack://application:,,,/ru-eng;component/ru.xaml") });
-
-            }
+            if (them == "dark")
+                Application.Current.Resources.MergedDictionaries.Insert(0, new ResourceDictionary { Source = new Uri("pack://application:,,,/dark_;component/lou.xaml") });
+            if (them == "light")
+                Application.Current.Resources.MergedDictionaries.Insert(0, new ResourceDictionary { Source = new Uri("pack://application:,,,/dark_;component/full.xaml") });
+            if (them != "default")
+                Application.Current.Resources.MergedDictionaries.Insert(1, new ResourceDictionary { Source = new Uri($"pack://application:,,,/ru-eng;component/{lang}.xaml") });
+            else
+                Application.Current.Resources.MergedDictionaries.Insert(0, new ResourceDictionary { Source = new Uri($"pack://application:,,,/ru-eng;component/{lang}.xaml") });
         }
 
         private void Set_language_ru(object sender, RoutedEventArgs e)
@@ -253,4 +240,3 @@ namespace prak8_
         public static List<string> naz = new List<string>();
     }
 }
-

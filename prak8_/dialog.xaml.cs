@@ -25,7 +25,7 @@ namespace prak8_
         public dialog()
         {
             InitializeComponent();
-            MainWindow.set_them_and_language(use.read("them.txt"), use.read("language.txt"));
+            set_them_and_language(use.read("them.txt"), use.read("language.txt"));
             tb.Text = "";
         }
 
@@ -55,31 +55,69 @@ namespace prak8_
         private void Click_1(object sender, RoutedEventArgs e)
         {
             use.write("them.txt", "default");
-            MainWindow.set_them_and_language(use.read("them.txt"), use.read("language.txt"));
+            set_them_and_language(use.read("them.txt"), use.read("language.txt"));
         }
 
         private void Click_2(object sender, RoutedEventArgs e)
         {
             use.write("them.txt", "dark");
-            MainWindow.set_them_and_language(use.read("them.txt"), use.read("language.txt"));
+            set_them_and_language(use.read("them.txt"), use.read("language.txt"));
         }
 
         private void Click_3(object sender, RoutedEventArgs e)
         {
             use.write("them.txt", "light");
-            MainWindow.set_them_and_language(use.read("them.txt"), use.read("language.txt"));
+            set_them_and_language(use.read("them.txt"), use.read("language.txt"));
         }
 
         private void Click_4(object sender, RoutedEventArgs e)
         {
             use.write("language.txt", "ru");
-            MainWindow.set_them_and_language(use.read("them.txt"), use.read("language.txt"));
+            set_them_and_language(use.read("them.txt"), use.read("language.txt"));
         }
 
         private void Click_5(object sender, RoutedEventArgs e)
         {
             use.write("language.txt", "eng");
-            MainWindow.set_them_and_language(use.read("them.txt"), use.read("language.txt"));
+            set_them_and_language(use.read("them.txt"), use.read("language.txt"));
+        }
+        void set_them_and_language(string them, string lang)
+        {
+            Application.Current.Resources.MergedDictionaries.Clear();
+            if (them == "" || lang == "")
+            {
+                Application.Current.Resources.MergedDictionaries.Insert(0, new ResourceDictionary { Source = new Uri("pack://application:,,,/ru-eng;component/eng.xaml") });
+                use.write("language.txt", "eng");
+                use.write("them.txt", "default");
+                return;
+            }
+            List<string> title = new List<string>()
+                            {
+                                "Сбросить темы",
+                                "Поставить темную тему",
+                                "Поставить светлую тему",
+                                "Поставить русский язык",
+                                "Поставить английский язык",
+                                "Set a deafault thems",
+                                "Set the dark them",
+                                "Set the light them",
+                                "Set russian language",
+                                "Set english language"
+                            };
+            if (lang == "eng")
+                for (int i = title.Count / 2; i < title.Count; i++)
+                    (cm.Items[i - 5] as MenuItem).Header = title[i];
+            if (lang == "ru")
+                for (int i = 0; i < title.Count / 2; i++)
+                    (cm.Items[i] as MenuItem).Header = title[i];
+            if (them == "dark")
+                Application.Current.Resources.MergedDictionaries.Insert(0, new ResourceDictionary { Source = new Uri("pack://application:,,,/dark_;component/lou.xaml") });
+            if (them == "light")
+                Application.Current.Resources.MergedDictionaries.Insert(0, new ResourceDictionary { Source = new Uri("pack://application:,,,/dark_;component/full.xaml") });
+            if (them != "default")
+                Application.Current.Resources.MergedDictionaries.Insert(1, new ResourceDictionary { Source = new Uri($"pack://application:,,,/ru-eng;component/{lang}.xaml") });
+            else
+                Application.Current.Resources.MergedDictionaries.Insert(0, new ResourceDictionary { Source = new Uri($"pack://application:,,,/ru-eng;component/{lang}.xaml") });
         }
     }
 }
