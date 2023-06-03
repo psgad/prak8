@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\dark_\dark_.csproj" />
+    <ProjectReference Include="..\doing\doing.csproj" />
+    <ProjectReference Include="..\function\function.csproj" />
+    <ProjectReference Include="..\ru-eng\ru-eng.csproj" />
+  </ItemGroup>
+
+</Project>

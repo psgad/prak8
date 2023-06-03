@@ -1,0 +1,12 @@
+C:\Users\user\Desktop\шарага\repos\prak8_\doing\bin\Debug\net6.0\doing.deps.json
+C:\Users\user\Desktop\шарага\repos\prak8_\doing\bin\Debug\net6.0\doing.dll
+C:\Users\user\Desktop\шарага\repos\prak8_\doing\bin\Debug\net6.0\doing.pdb
+C:\Users\user\Desktop\шарага\repos\prak8_\doing\obj\Debug\net6.0\doing.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\шарага\repos\prak8_\doing\obj\Debug\net6.0\doing.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\шарага\repos\prak8_\doing\obj\Debug\net6.0\doing.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\шарага\repos\prak8_\doing\obj\Debug\net6.0\doing.AssemblyInfo.cs
+C:\Users\user\Desktop\шарага\repos\prak8_\doing\obj\Debug\net6.0\doing.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\шарага\repos\prak8_\doing\obj\Debug\net6.0\doing.dll
+C:\Users\user\Desktop\шарага\repos\prak8_\doing\obj\Debug\net6.0\refint\doing.dll
+C:\Users\user\Desktop\шарага\repos\prak8_\doing\obj\Debug\net6.0\doing.pdb
+C:\Users\user\Desktop\шарага\repos\prak8_\doing\obj\Debug\net6.0\ref\doing.dll

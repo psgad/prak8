@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "yP6W7HgIUNj8creQkXHwoKz0qgVoUPBHTZYu2vgzv6fQEd/hgY6yD2T8SZRvZi9FFcLTLW8pgcB0r20z/nbkjw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\user\\Desktop\\шарага\\repos\\prak8_\\prak8_\\prak8_.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

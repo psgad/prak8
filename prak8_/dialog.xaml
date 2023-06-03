@@ -1,0 +1,23 @@
+﻿<Window x:Class="prak8_.dialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:prak8_"
+        mc:Ignorable="d"
+        Title="dialog" Height="200" Width="200" MinHeight="200" MaxHeight="200" MinWidth="200" MaxWidth="200" Closing="Window_Closing">
+
+    <Grid Style="{DynamicResource grid}">
+        <Grid.ContextMenu>
+            <ContextMenu x:Name="cm">
+                <MenuItem Header="Сбросить тему"/>
+                <MenuItem Header="Установить темную тему"/>
+                <MenuItem Header="Установить светлую тему"/>
+            </ContextMenu>
+        </Grid.ContextMenu>
+        <Button Content="{StaticResource b5}" Margin="70,92,0,0" Click="Button_Click" HorizontalAlignment="Left" Width="60" Height="20" VerticalAlignment="Top" Style="{DynamicResource button}"/>
+        <TextBox x:Name="tb" Margin="10,55,10,0" TextWrapping="Wrap" Height="18" VerticalAlignment="Top"/>
+        <Label Content="{StaticResource l5}" Margin="0,29,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Center" Width="180" HorizontalContentAlignment="Center" Style="{DynamicResource label}"/>
+
+    </Grid>
+</Window>
